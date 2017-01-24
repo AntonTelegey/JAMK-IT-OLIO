@@ -1,4 +1,4 @@
-﻿/* Anton Telegey kotitehtavat
+/* Anton Telegey kotitehtavat
 * tehty 17.1.17
 */
 using System;
@@ -24,8 +24,8 @@ namespace olio1
     {
         static void Main(string[] args)
         {
-            tehtava7();
-            //valikko();
+
+            valikko();
         }
         static void valikko()
         {
@@ -33,12 +33,11 @@ namespace olio1
             int valinta = -1;
             while (valinta != 0)
             {
-                tehtavia = 20;
-                muita = 4;
-
-                for (i=1; i=<tehtavia;i++) {
-                    Console.WriteLine("Valikko:");
-                    Console.WriteLine(i + " = Tehtava " + i + );
+                int tehtavia = 20;
+                int muita = 4;
+                Console.WriteLine("Valikko:");
+                for (int i=1; i <= tehtavia; i++) {
+                    Console.WriteLine(i + " = Tehtava " + i);
                 }
                 Console.WriteLine(tehtavia + 1 + " = SayHello() ");
                 Console.WriteLine(tehtavia + 2 + " = AksAge() ");
@@ -48,12 +47,27 @@ namespace olio1
                 Console.WriteLine("Valitse ohjelma: ");
                 string syote = Console.ReadLine();
                 valinta = int.Parse(syote);
-                for(i=1;i=<tehtavia;i++) {
-                    if(valinta == i) {
-                        tehtava + i();
-                    }
-                }
-                if (valinta == tehtavia + 1)
+                if (valinta == 1) { tehtava1(); }
+                else if (valinta == 2) { tehtava2(); }
+                else if (valinta == 3) { tehtava3(); }
+                else if (valinta == 4) { tehtava4(); }
+                else if (valinta == 5) { tehtava5(); }
+                else if (valinta == 6) { tehtava6(); }
+                else if (valinta == 7) { tehtava7(); }
+                else if (valinta == 8) { tehtava8(); }
+                else if (valinta == 9) { tehtava9(); }
+                else if (valinta == 10) { tehtava10(); }
+                else if (valinta == 11) { tehtava11(); }
+                else if (valinta == 12) { tehtava12(); }
+                else if (valinta == 13) { tehtava13(); }
+                else if (valinta == 14) { tehtava14(); }
+                else if (valinta == 15) { tehtava15(); }
+                else if (valinta == 16) { tehtava16(); }
+                else if (valinta == 17) { tehtava17(); }
+                else if (valinta == 18) { tehtava18(); }
+                else if (valinta == 19) { tehtava19(); }
+                else if (valinta == 20) { tehtava20(); }
+                else if (valinta == tehtavia + 1)
                 {
                     SayHello();
                 }
@@ -71,13 +85,14 @@ namespace olio1
                 }
                 else
                 {
-                    if !(valinta !> muita + tehtavia %% valinta !< 0){valikko();}
+                    if (valinta > muita + tehtavia && valinta < 0) { valikko(); }
                 }
                 
             }
         }
         static void SayHello()
         {
+            Console.Clear();
             Henkilo immeinen = new Henkilo();
             immeinen.Nimi = "Ville Petteri";
             immeinen.Ika = 25;
@@ -90,6 +105,7 @@ namespace olio1
         }
         static void AksAge()
         {
+            Console.Clear();
             Console.WriteLine("Syota syntymavuosi: ");
             string syote = Console.ReadLine();
             int vuosi = int.Parse(syote);
@@ -118,7 +134,7 @@ namespace olio1
         }
         static void kayttajat()
         {
-
+            Console.Clear();
 
             string[] array = new string[5];
             Console.WriteLine("Anna käyttäjien etunimet:");
@@ -142,6 +158,7 @@ namespace olio1
         }
         static void arvonta()
         {
+            Console.Clear();
             Console.Write("Anna arvottavien rivien määrä > ");
             string syote = Console.ReadLine();
             int rivit = int.Parse(syote);
@@ -179,6 +196,7 @@ namespace olio1
         }
         static void tehtava1()
         {
+            Console.Clear();
             int numero;
             Console.WriteLine("Anna luku 1-3 > ");
             string syote = Console.ReadLine();
@@ -200,6 +218,7 @@ namespace olio1
         }
         static void tehtava2 ()
         {
+            Console.Clear();
             int numero;
             Console.WriteLine("Anna pistemäärä 0-12 > ");
             string syote = Console.ReadLine();
@@ -237,6 +256,7 @@ namespace olio1
         }
         static void tehtava3 ()
         {
+            Console.Clear();
             int[] array = new int[3];
             Console.WriteLine("Syota 3 numeroa:");
             for (int i = 0; i < 3; i++)
@@ -258,6 +278,7 @@ namespace olio1
         }
         static void tehtava4 ()
         {
+            Console.Clear();
             Console.WriteLine("Minka ikainen olet?:");
             string syote = Console.ReadLine();
             int ika = int.Parse(syote);
@@ -278,13 +299,14 @@ namespace olio1
         }
         static void tehtava5()
         {
+            Console.Clear();
             Console.Write("Anna sekunnit > ");
             string syote = Console.ReadLine();
             int sekunnit = int.Parse(syote);
 
             int tunnit = sekunnit / 3600;
-            int minuutit = sekunnit / 60 / 60;
-            int sek = minuutit / 60;
+            int minuutit = sekunnit / 60 - tunnit * 60;
+            int sek = sekunnit % 60;
 
             Console.WriteLine("Antamasi sekunttiaika voidaan ilmaista muodossa: " + tunnit + " tunti " + minuutit + " minuutti " + sek + " sekuntti");
             Console.ReadLine();
@@ -292,6 +314,7 @@ namespace olio1
         }
         static void tehtava6()
         {
+            Console.Clear();
             Console.Write("Anna ajokilometrit > ");
             string syote = Console.ReadLine();
             int km = int.Parse(syote);
@@ -305,6 +328,7 @@ namespace olio1
         }
         static void tehtava7()
         {
+            Console.Clear();
             Console.Write("Anna vuosiluku > ");
             string syote = Console.ReadLine();
             int vuosi = int.Parse(syote);
@@ -328,7 +352,8 @@ namespace olio1
             valikko();
         }
         static void tehtava8() {
-                int[] array = new int[3];
+            Console.Clear();
+            int[] array = new int[3];
                 Console.WriteLine("Syota 3 numeroa: ");
                 for (int i = 0; i < 3; i++)
                 {
@@ -336,54 +361,64 @@ namespace olio1
                 }
                 Array.Sort(array);
                 Array.Reverse(array);
-                Console.WriteLine("Suurin numero on: " + array[0];
+                Console.WriteLine("Suurin numero on: " + array[0]);
                 Console.ReadLine();
                 valikko();
         }
         static void tehtava9() {
-                int summa = 0;
-                do {
-                    Console.WriteLine("Syota numero: ");
+            Console.Clear();
+            int summa = 0;
+            int numero = 1;
+                while (numero != 0)
+                {
+                    Console.WriteLine("Syota numero: (Lopeta 0)");
                     string syote = Console.ReadLine();
-                    int numero = int.Parse(syote);
+                    numero = int.Parse(syote);
                     summa = summa + numero;
-                } while (numero != 0)
+                } 
                 Console.WriteLine("Lukujen summa on " + summa);
                 Console.ReadLine();
                 valikko();
         }
         static void tehtava10() {
-            int[] taulukko = new int[9] {1,2,33,44,55,68,77,96,100}
+            Console.Clear();
+            int[] taulukko = new int[9] { 1, 2, 33, 44, 55, 68, 77, 96, 100 };
             for (int b = 0; b < taulukko.Length; b++) {
                     Console.Write(taulukko[b]);
-                    if (taulukko[b] % 2 == 0 ) { Console.Write("HEP"); }
+                    if (taulukko[b] % 2 == 0 ) { Console.WriteLine("HEP"); }
             }
             Console.ReadLine();
             valikko();
         }
         static void tehtava11 () {
+            Console.Clear();
             Console.WriteLine("Syota numero: ");
             string syote = Console.ReadLine();
             int numero = int.Parse(syote);
-            for (int i = 0; i =< numero; i++) {
-                for (int a = 0; a = i; i++) {
-                    Console.Writeline("*");
+            for (int i = 0; i <= numero; i++) {
+                for (int a = 0; a < i; a++) {
+                    Console.Write("*");
                 }
+                Console.WriteLine();
             }
             Console.ReadLine();
             valikko();
         }
 
         static void tehtava12() {
-            lukuja = 5;
+            Console.Clear();
+            int lukuja = 5;
             int[] array = new int[lukuja];
             for (int i = 0; i < lukuja; i++)
             {
                 Console.WriteLine("Anna luku > ");
-                array[i] = Convert.ToInt32(Console.ReadLine());
+                string line = Console.ReadLine();
+                int numero;
+                bool result = Int32.TryParse(line, out numero);
+                array[i] = numero;
             }
             Array.Reverse(array);
-            foreach (string k in array)
+            foreach (int k in array)
             {
                 Console.Write("Luvut ovat: " + k + ", ");
             }
@@ -391,11 +426,11 @@ namespace olio1
             valikko();
         }
         static void tehtava13() {
-            lukuja = 5;
-            summa = 0;
-            int size = array.Length;
-
+            Console.Clear();
+            int lukuja = 5;
+            int summa = 0;
             int[] array = new int[lukuja];
+            int size = array.Length;
             for (int i = 0; i < lukuja; i++)
             {
                 Console.WriteLine("Anna pisteet > ");
@@ -413,6 +448,7 @@ namespace olio1
             valikko();
         }
         static void tehtava14() {
+            Console.Clear();
             int opiskelijoita = 8;
             int arvosana0 = 0;
             int arvosana1 = 0;
@@ -440,13 +476,14 @@ namespace olio1
                     arvosana5 = arvosana5 + 1;
                 }
             }
-            Console.WriteLine("Arvosanat:");
+            Console.WriteLine("Arvosanat 1-5:");
             Console.WriteLine("0:");
             for (int i = 0; i < arvosana0; i++)
             {
                 Console.Write("*");
             }
-            Console.WriteLine("1:");
+            Console.WriteLine();
+            Console.Write("1:");
             for (int i = 0; i < arvosana1; i++)
             {
                 Console.Write("*");
@@ -475,11 +512,12 @@ namespace olio1
             valikko();
         }
         static void tehtava15() {
+            Console.Clear();
             Console.WriteLine("Anna luku > ");
             string syote = Console.ReadLine();
             int numero = int.Parse(syote);
             int puu = numero - 2;
-            jalka = 2;
+            int jalka = 2;
 
             for (int i = 0; i < puu; i++)
                 {
@@ -488,7 +526,7 @@ namespace olio1
                     {
                         Console.Write(" ");
                     }
-                    for (int tahti = 0; tahti <= i * 2; star++)
+                    for (int tahti = 0; tahti <= i * 2; tahti++)
                     {
                         Console.Write("*");
                     }
@@ -506,13 +544,18 @@ namespace olio1
                 valikko();
         }
         static void tehtava16() {
+            Console.Clear();
             Random rand = new Random();
             int random = rand.Next(1, 101);
-            Console.WriteLine("Arvaa luku > ");
-            string syote = Console.ReadLine();
-            int arvottu = int.Parse(syote);
-            arvauksia = 0;
+            
+            int arvauksia = 0;
+            int arvottu = 0;
+
             while(random != arvottu) {
+                Console.Clear();
+                Console.WriteLine("Arvaa luku > ");
+                string syote = Console.ReadLine();
+                arvottu = int.Parse(syote);
                 arvauksia++;
                 if (arvottu > random) {
                     Console.WriteLine("Numero on pienempi ");
@@ -525,10 +568,10 @@ namespace olio1
             valikko();
         }
         static void tehtava17() {
-            int[] taulukko1 = new int[5] {10,20,30,40,50}
-            int[] taulukko2 = new int[5] {5,15,25,35,45}
-            int[] yhdistettytaulukko = new int[10];
-            yhdistettytaulukko = taulukko1 + taulukko2;
+            Console.Clear();
+            int[] taulukko1 = { 10, 20, 30, 40, 50 };
+            int[] taulukko2 = { 5, 15, 25, 35, 45 };
+            int[] yhdistettytaulukko = taulukko1.Concat(taulukko2).ToArray();
             Array.Sort(yhdistettytaulukko);
             int size = yhdistettytaulukko.Length;
             Console.WriteLine("Luvut yhdistetyssä taulukossa : ");
@@ -540,37 +583,69 @@ namespace olio1
             valikko();
         }
         static void tehtava18() {
+            Console.Clear();
             Console.Write("Kirjoita joku lause : ");
             string lause = Console.ReadLine();
-            int pituus = line.Length;
+            int pituus = lause.Length;
+            int palidromi = 0;
 
             for (int i = 0; i < pituus / 2; i++)
             {
-                if (lause[i] != lause[pituus - i - 1])
+                if (lause[i] == lause[pituus - i - 1])
                 {
-                    Console.WriteLine("Lause ei ole palidromi.");
-                } else {
-                    Console.WriteLine("Lause on palidromi.");
+                    palidromi = 1;
                 }
+            }
+            if (palidromi == 1)
+            {
+                Console.WriteLine("Lause on palidromi.");
+            }
+            else
+            {
+                Console.WriteLine("Lause ei ole palidromi.");
             }
             Console.ReadLine();
             valikko();
         }
         static void tehtava19() {
-            string sana = "opiskelija";
-            int pituus = line.length;
-            string arvattu;
-                
-            for (int i = 0; i < pituus; i++) {
-                Console.WriteLine("Arvaa seuraava kirjain");
-                char kirjain = Console.ReadLine();
-                if (kirjain == sana[i]) {
-                    arvattu = arvattu + sana[i];
-                    ConsoleWrite(arvattu);
+            Console.Clear();
+
+            string sana = "OPISKELIJA";
+            StringBuilder arvaus = new StringBuilder("__________");
+            int arvauskerrat = 0;
+            int max = 20;
+
+            do
+            {
+                Console.WriteLine("Arvaa kirjain ");
+                string kirjain = Console.ReadLine().ToUpper();
+                arvauskerrat ++;
+
+                for (int i = 0; i < sana.Length; i++)
+                {
+                    if (sana[i] == kirjain[0]) {
+                        arvaus[i] = kirjain[0];
+                    }
                 }
-            }
-            Console.WriteLine("Arvasit: " + arvattu);
-            Console.WriteLine("Oikea sana: " + sana);
+                Console.WriteLine("Arvatut kirjaimet: " + arvaus);
+                Console.WriteLine("Olet arvonnut " + arvauskerrat + " kertaa.");
+                Console.WriteLine("Arvaa uudestaan ");
+                if (sana == arvaus.ToString())
+                {
+                    Console.Clear();
+                    Console.WriteLine("Onneksi olkoon! Arvasit sanan " + arvauskerrat + " kertaa");
+                    Console.WriteLine("Arvattu sana on " + sana);
+                }
+            } while (arvauskerrat < max && sana.Equals(arvaus.ToString()));
+
+                
+            Console.ReadLine();
+            valikko();
+        }
+        static void tehtava20()
+        {
+            Console.Clear();
+
             Console.ReadLine();
             valikko();
         }
