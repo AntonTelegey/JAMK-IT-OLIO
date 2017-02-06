@@ -1,0 +1,77 @@
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace tehtava2
+{
+	class vahvistin
+	{
+		public const int maxvol = 100;
+		public const int minvol = 0;
+		private int vol;
+
+		public int Vol
+		{
+			get
+			{
+				return vol;
+			}
+
+			set
+			{
+
+				vol = value;
+
+				if (value > maxvol)
+				{
+					vol = maxvol;
+				}
+
+				else if (value < minvol)
+				{
+					vol = minvol;
+				}
+
+				else
+				{
+					vol = value;
+				}
+
+			}
+		}
+	}
+
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			for (int i = 0; i < 100; i++) {
+						
+					string retval;
+					int number;
+					vahvistin vahvistin = new vahvistin();
+
+					Console.Write("Give a new volume value (0-100): ");
+					retval = Console.ReadLine();
+					int.TryParse(retval, out number);
+					vahvistin.Vol = number;
+
+						if (number > vahvistin.maxvol)
+					{
+						Console.WriteLine("Too much volume - Amplifier volume is set to maximum: " + vahvistin.Vol);
+					}
+
+					else if (number < vahvistin.minvol)
+					{
+						Console.WriteLine("Too low volume - Amplifier volume is set to minimum: " + vahvistin.Vol);
+					}
+
+					else
+					{
+						Console.WriteLine("Amplifier volume is set to: " + vahvistin.Vol);
+					}
+			}
+		}
+	}
+}
