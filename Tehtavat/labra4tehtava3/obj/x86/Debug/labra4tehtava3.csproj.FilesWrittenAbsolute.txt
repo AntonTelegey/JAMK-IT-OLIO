@@ -1,0 +1,5 @@
+/Users/antontelegey/Projects/labra4tehtava3/labra4tehtava3/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/Users/antontelegey/Projects/labra4tehtava3/labra4tehtava3/bin/Debug/labra4tehtava3.exe.mdb
+/Users/antontelegey/Projects/labra4tehtava3/labra4tehtava3/bin/Debug/labra4tehtava3.exe
+/Users/antontelegey/Projects/labra4tehtava3/labra4tehtava3/obj/x86/Debug/labra4tehtava3.exe
+/Users/antontelegey/Projects/labra4tehtava3/labra4tehtava3/obj/x86/Debug/labra4tehtava3.exe.mdb
