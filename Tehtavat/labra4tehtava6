@@ -1,0 +1,47 @@
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace tehtava6
+{
+	class tavara
+	{
+		public string nimi { get; set; }
+	}
+	class puhelin : tavara
+	{
+		public string malli { get; set; }
+	}
+	class lappari : tavara
+	{
+		public string malli { get; set; }
+	}
+	class cd : tavara
+	{
+		public string vuosi { get; set; }
+	}
+
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			puhelin puhelin = new puhelin();
+			puhelin.nimi = "Iphone";
+			puhelin.malli = "5";
+			Console.WriteLine("Puhelin: " + puhelin.nimi + " " + puhelin.malli);
+
+			lappari lappari = new lappari();
+			lappari.nimi = "HP";
+			lappari.malli = "5000";
+			Console.WriteLine("Lappari: " + lappari.nimi + " " + lappari.malli);
+
+			cd cd = new cd();
+			cd.nimi = "ASD";
+			cd.vuosi = "2016";
+			Console.WriteLine("CD: " + cd.nimi + " " + cd.vuosi);
+
+			Console.ReadLine();
+		}
+	}
+}
