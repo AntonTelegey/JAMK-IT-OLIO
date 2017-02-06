@@ -1,0 +1,82 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace tehtava5
+{
+	class Radio
+	{
+		public bool virta { get; set; }
+
+		private int vol;
+		public int Vol
+		{
+			get { return vol; }
+			set
+			{
+				if (!virta)
+				{
+					Console.WriteLine("Laita radio paalle.");
+					return;
+				}
+				if (value < 0)
+				{
+					Console.WriteLine("Aaneenvomakkuus on liian pieni");
+					vol = 0;
+				}
+				else if (value > 9)
+				{
+					Console.WriteLine("Aanen voimakkuus on liian suuri");
+					vol = 9;
+				}
+				else vol = value;
+			}
+		}
+
+		private int taajuus;
+		public int Taajuus
+		{
+			get { return taajuus; }
+			set
+			{
+				if (!virta)
+				{
+					Console.WriteLine("Laita radio paalle.");
+					return;
+				}
+				if (value < 2000)
+				{
+					Console.WriteLine("Taajuus on liian pieni");
+					taajuus = 2000;
+				}
+				else if (value > 26000)
+				{
+					Console.WriteLine("Taajuus on liian suuri");
+					taajuus = 26000;
+				}
+				else taajuus = value;
+			}
+		}
+
+		public override string ToString()
+		{
+			return "Onko radio paalla?: " + virta + " Aanen voimakkuus: " + Vol + " Taajuus: " + Taajuus;
+		}
+
+	}
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			Radio radio = new Radio();
+			radio.virta = true;
+			radio.Vol = 5;
+			radio.Taajuus = 4000;
+			Console.WriteLine(radio.ToString());
+
+			Console.ReadLine();
+		}
+	}
+}
