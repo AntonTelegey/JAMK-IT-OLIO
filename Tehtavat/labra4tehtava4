@@ -1,0 +1,87 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace tehtava4
+{	
+	class Vehicle
+	{
+		public string Name { get; set; }
+		public string Model { get; set; }
+		public int ModelYear { get; set; }
+		public string Color { get; set; }
+
+		public override string ToString()
+		{
+			return "- Name:" + Name + " Model:" + Model + " ModelYear:" + ModelYear + " Color:" + Color;
+		}
+	}
+
+	class Bike : Vehicle
+	{
+		public bool GearWheels { get; set; }
+		public string GearName { get; set; }
+		public override string ToString()
+		{
+			return base.ToString() + " GearWheels:" + GearWheels + "Gear Name:" + GearName;
+		}
+	}
+	class Boat : Vehicle
+	{
+		public int SeatCount { get; set; }
+		public string BoatType { get; set; }
+		public override string ToString()
+		{
+			return base.ToString() + " SeatCount:" + SeatCount + " BoatType:" + BoatType;
+		}
+	}
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			Bike bike = new Bike();
+			bike.Name = "Jopo";
+			bike.Model = "Street";
+			bike.ModelYear = 2016;
+			bike.Color = "Blue";
+			bike.GearWheels = false;
+			bike.GearName = "";
+			Console.WriteLine("- info");
+			Console.WriteLine(bike.ToString());
+
+			Bike bike2 = new Bike();
+			bike2.Name = "Tunturi";
+			bike2.Model = "StreetPower";
+			bike2.ModelYear = 2010;
+			bike2.Color = "Black";
+			bike2.GearWheels = true;
+			bike2.GearName = "Shimano";
+			Console.WriteLine("- Bike2 info");
+			Console.WriteLine(bike2.ToString());
+
+			Boat boat = new Boat();
+			boat.Name = "Suvi";
+			boat.Model = "S900";
+			boat.ModelYear = 1990;
+			boat.Color = "White";
+			boat.SeatCount = 3;
+			boat.BoatType = "Rowboat";
+			Console.WriteLine("- Boat info");
+			Console.WriteLine(boat.ToString());
+
+			Boat boat2 = new Boat();
+			boat2.Name = "Yamaha";
+			boat2.Model = "Model 1000";
+			boat2.ModelYear = 2010;
+			boat2.Color = "Yellow";
+			boat2.SeatCount = 5;
+			boat2.BoatType = "Motorboat";
+			Console.WriteLine("- Boat2 info");
+			Console.WriteLine(boat2.ToString());
+
+			Console.ReadLine();
+		}
+	}
+}
