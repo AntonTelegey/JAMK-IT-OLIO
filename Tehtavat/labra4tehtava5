@@ -8,7 +8,7 @@ namespace tehtava5
 {
 	class Radio
 	{
-		public bool virta { get; set; }
+		public bool Virta { get; set; }
 
 		private int vol;
 		public int Vol
